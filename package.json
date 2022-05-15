@@ -1,26 +1,27 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/TarquiniusMajor/frontend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/TarquiniusMajor/frontend-project-lvl3/actions)",
-  "main": "src/init.js",
+  "name": "webpack-package",
+  "version": "0.1.0",
+  "description": "",
   "type": "module",
   "scripts": {
-    "test": "jest -u -t=\"ColorPicker\""
+    "test": "jest --colors"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TarquiniusMajor/frontend-project-lvl3.git"
   },
-  "author": "",
+  "author": "Kirill Mokevnin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TarquiniusMajor/frontend-project-lvl3/issues"
+    "url": "https://github.com/TarquiniusMajor/frontend-project-lvl3.gitissues"
   },
-  "homepage": "https://github.com/TarquiniusMajor/frontend-project-lvl3#readme",
+  "homepage": "https://github.com/TarquiniusMajor/frontend-project-lvl3.git#readme",
   "jest": {
     "verbose": true,
+    "testURL": "http://localhost/",
     "testEnvironment": "jsdom"
   },
+  "main": "src/init.js",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.4",
@@ -31,9 +32,8 @@
     "debug": "^4.3.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jest": "^24.4.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
@@ -48,7 +48,6 @@
     "webpack-dev-server": "^4.1.1"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3",
     "npm-check-updates": "^11.8.5",
     "sass": "^1.39.0",
     "sass-loader": "^12.1.0"
