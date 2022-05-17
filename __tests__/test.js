@@ -1,6 +1,6 @@
 // @ts-check
+const init = () => 'gut!';
 
-const init = () => 'gut!'
 test('init', () => {
   init();
   expect(true).toBeDefined();
