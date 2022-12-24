@@ -1,3 +1,5 @@
 // @ts-check
 import 'bootstrap';
-import './assets/css/style.css';
+import './assets/scss/main.scss';
+
+import app from './app/app.js'

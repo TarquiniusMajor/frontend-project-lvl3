@@ -1,5 +1,6 @@
 module.exports = {
+  parser: 'postcss-scss',
   plugins: [
-    'postcss-preset-env',
+    'postcss-preset-env', 'autoprefixer'
   ],
 };
