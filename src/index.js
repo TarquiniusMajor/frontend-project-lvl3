@@ -2,4 +2,4 @@
 import 'bootstrap';
 import './assets/scss/main.scss';
 
-import app from './app/app.js'
+import './app/app.js';
