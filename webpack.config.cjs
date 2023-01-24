@@ -1,7 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  mode: 'production',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
+    new MiniCssExtractPlugin(),
+  ],
   module: {
     rules: [
       {
@@ -14,11 +21,11 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
-      },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
+      },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'url-loader?limit=10000',
@@ -29,10 +36,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-    }),
-    new MiniCssExtractPlugin({})
-  ],
+
 };
