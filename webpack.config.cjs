@@ -2,6 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  performance: {
+    maxEntrypointSize: 5120000,
+    maxAssetSize: 5120000
+  },
   mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({

@@ -17,15 +17,6 @@ const state = {
     status: 'filling', // statuses: filling/pending/ready/error
     value: '',
     error: null,
-    setStatus: (status) => {
-      this.status = status;
-    },
-    setValue: (value) => {
-      this.value = value;
-    },
-    setError: (error) => {
-      this.error = error;
-    },
   },
 };
 // i18next
@@ -67,20 +58,20 @@ const watchedState = onChange(state, stateCallBack);
 
 // Controllers
 const addFeedController = (url, currentState, schema, event) => {
-  currentState.formState.setStatus('pending');
+  currentState.formState.status = 'pending';
   return schema.validate(url)
     .then(() => {
       currentState.feedList.push(url);
     })
     .then(() => {
       event.target.reset();
-      currentState.formState.setStatus('ready');
-      currentState.formState.setValue('');
-      currentState.formState.setError(null);
+      currentState.formState.status = 'ready';
+      currentState.formState.value = '';
+      currentState.formState.error = null;
     })
     .catch((err) => {
-      currentState.formState.setError(err.message);
-      currentState.formState.setStatus('error');
+      currentState.formState.error = err.message;
+      currentState.formState.status = 'error';
     });
 };
 // Validation
@@ -92,6 +83,6 @@ const schema = yup.lazy(() => yup.string().url().notOneOf(state.feedList));
 // Controllers attachment
 domObjects.form.addEventListener('submit', (e) => {
   e.preventDefault();
-  watchedState.formState.setValue(e.target['url-input'].value);
+  watchedState.formState.value = e.target['url-input'].value;
   return addFeedController(watchedState.formState.value, watchedState, schema, e);
 });
